@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditTranslationsLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{translationsController.selected.id}" title="#{bundle.EditTranslationsTitle_id}" required="true" requiredMessage="#{bundle.EditTranslationsRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.EditTranslationsLabel_translation}" for="translation" />
                     <h:inputText id="translation" value="#{translationsController.selected.translation}" title="#{bundle.EditTranslationsTitle_translation}" />
                     <h:outputLabel value="#{bundle.EditTranslationsLabel_languageId}" for="languageId" />
