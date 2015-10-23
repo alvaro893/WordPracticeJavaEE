@@ -124,7 +124,7 @@ public class Words implements Serializable {
 
     @Override
     public String toString() {
-        return "metropolia.alvarob.jpa.Words[ id=" + id + " ]";
+        return this.word;
     }
     
 }

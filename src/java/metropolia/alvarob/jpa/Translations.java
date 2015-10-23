@@ -109,7 +109,7 @@ public class Translations implements Serializable {
 
     @Override
     public String toString() {
-        return "metropolia.alvarob.jpa.Translations[ id=" + id + " ]";
+        return this.translation;
     }
     
 }
