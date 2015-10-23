@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTranslationsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTranslationsLabel_translation}" for="translation" />
+                    <h:inputText id="translation" value="#{translationsController.selected.translation}" title="#{bundle.CreateTranslationsTitle_translation}" />
+                    <h:outputLabel value="#{bundle.CreateTranslationsLabel_languageId}" for="languageId" />
+                    <h:selectOneMenu id="languageId" value="#{translationsController.selected.languageId}" title="#{bundle.CreateLanguagesLabel_language}" >
+                        <f:selectItems value="#{languagesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateTranslationsLabel_wordId}" for="wordId" />
+                    <h:selectOneMenu id="wordId" value="#{translationsController.selected.wordId}" title="#{bundle.CreateTranslationsTitle_wordId}" required="true" requiredMessage="#{bundle.CreateTranslationsRequiredMessage_wordId}">
+                        <f:selectItems value="#{wordsController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{translationsController.create}" value="#{bundle.CreateTranslationsSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{translationsController.prepareList}" value="#{bundle.CreateTranslationsShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTranslationsIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

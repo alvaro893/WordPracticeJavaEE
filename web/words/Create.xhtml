@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateWordsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateWordsLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{wordsController.selected.id}" title="#{bundle.CreateWordsTitle_id}" required="true" requiredMessage="#{bundle.CreateWordsRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateWordsLabel_word}" for="word" />
+                    <h:inputText id="word" value="#{wordsController.selected.word}" title="#{bundle.CreateWordsTitle_word}" />
+                    <h:outputLabel value="#{bundle.CreateWordsLabel_languageId}" for="languageId" />
+                    <h:selectOneMenu id="languageId" value="#{wordsController.selected.languageId}" title="#{bundle.CreateWordsTitle_languageId}" >
+                        <f:selectItems value="#{languagesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateWordsLabel_userId}" for="userId" />
+                    <h:selectOneMenu id="userId" value="#{wordsController.selected.userId}" title="#{bundle.CreateWordsTitle_userId}" required="true" requiredMessage="#{bundle.CreateWordsRequiredMessage_userId}">
+                        <f:selectItems value="#{usersController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{wordsController.create}" value="#{bundle.CreateWordsSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{wordsController.prepareList}" value="#{bundle.CreateWordsShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateWordsIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
