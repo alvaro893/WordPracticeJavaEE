@@ -15,8 +15,6 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateWordsLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{wordsController.selected.id}" title="#{bundle.CreateWordsTitle_id}" required="true" requiredMessage="#{bundle.CreateWordsRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.CreateWordsLabel_word}" for="word" />
                     <h:inputText id="word" value="#{wordsController.selected.word}" title="#{bundle.CreateWordsTitle_word}" />
                     <h:outputLabel value="#{bundle.CreateWordsLabel_languageId}" for="languageId" />

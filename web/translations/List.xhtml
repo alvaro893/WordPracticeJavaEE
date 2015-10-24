@@ -36,13 +36,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTranslationsTitle_languageId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.languageId}"/>
+                            <h:outputText value="#{item.languageId.language}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTranslationsTitle_wordId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.wordId}"/>
+                            <h:outputText value="#{item.wordId.word}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
