@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='UTF-8' ?> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
@@ -6,17 +6,38 @@
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
         <title><ui:insert name="title">Default Title</ui:insert></title>
-        <h:outputStylesheet library="css" name="jsfcrud.css"/>
     </h:head>
 
     <h:body>
-        <h1>
-            <ui:insert name="title">Default Title</ui:insert>
-        </h1>
-        <p>
-            <ui:insert name="body">Default Body</ui:insert>
-        </p>
+
+
+        <div id="top" class="top">
+            <ui:insert name="top">
+                <h2>
+                    My Dictionary
+                </h2>
+            </ui:insert>
+        </div>
+        <div>
+            <div id="left">
+                <!--<ui:insert name="left">Left</ui:insert>-->
+                <ul>
+                    <li><h:link outcome="/languages/List" value="Show All Languages Items"/></li>
+                    <li><h:link outcome="/scores/List" value="Show All Scores Items"/></li>
+                    <li><h:link outcome="/translations/List" value="Show All Translations Items"/></li>
+                    <li><h:link outcome="/users/List" value="Show All Users Items"/></li>
+                    <li><h:link outcome="/words/List" value="Show All Words Items"/></li>
+                </ul>
+            </div>
+            <div id="content" class="left_content">
+                <!--<ui:insert name="content">Content</ui:insert>-->
+                <h2><ui:insert name="title">Default Title</ui:insert></h2>
+                <ui:insert name="body">Default Body</ui:insert>
+            </div>
+        </div>
     </h:body>
 
 </html>
